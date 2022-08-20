@@ -1,8 +1,14 @@
 // ここから書きましょう
+import Orange from "./images/orange.jpg"
+import Apple from "./images/apple.jpg"
+import Kiwi from "./images/kiwi.jpg"
+import Peach from "./images/peach.jpg"
+
+
 function Fruit({fruit}){
     return (
         <div className="card">
-            <div className="img" src="${fruit.image}"></div>
+            <a className="img" href={fruit.image}></a>
             <div className="card-textbox">
                 <h2>
                     {fruit.name}
@@ -21,7 +27,7 @@ function Fruit({fruit}){
 function App(){
     const fruitList = [
         {
-            image: "https://cdn.pixabay.com/photo/2016/10/07/13/36/tangerines-1721590_960_720.jpg",
+            image: Orange,
             name: 'Orange',
             calorie: 46,
             macro: {
@@ -31,7 +37,7 @@ function App(){
             }
         },
         {
-            image: './images/apple.jpg',
+            image: Apple,
             name: 'Apple',
             calorie: 57,
             macro: {
@@ -41,7 +47,7 @@ function App(){
             }
         },
         {
-            image: './images/kiwi.jpg',
+            image: Kiwi,
             name: 'Kiwi fruit',
             calorie: 53,
             macro: {
@@ -51,7 +57,7 @@ function App(){
             }
         },
         {
-            image: './images/peach.jpg',
+            image: Peach,
             name: 'Peach',
             calorie: 40,
             macro: {
@@ -66,12 +72,7 @@ function App(){
         <div>
             <h1 style={{textAlign: "center"}}>Fruit List</h1>
             <hr width="30%" align="center"></hr>
-            <div style={{
-                flex: 1,
-                
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-            }}>
+            <div className="flex">
                 {fruitList.map((fruit) => 
                     <Fruit
                         fruit={fruit}
