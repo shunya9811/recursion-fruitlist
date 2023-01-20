@@ -83,6 +83,6 @@ function App(){
         </div>
     )
 }
-
+//画像の挿入方法がわからなかった
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
